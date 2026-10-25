@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: oom-demo
+  namespace: agent-mvp
+  labels:
+    app: oom-lab
+spec:
+  backoffLimit: 0
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: worker
+          image: oom-lab:0.1
+          imagePullPolicy: Never
+          env:
+            - name: TARGET_MIB
+              value: "192"
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "500m"
+              memory: "128Mi"
+
