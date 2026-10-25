@@ -51,6 +51,8 @@ Artifacts land in `out/`: `evidence.json`, `proposals.json`, `verdict.json`,
 | `pipeline.py` | The whole flow: evidence → two calls → bridge → execute → verify → ledger |
 | `oom_job/oom.py` | The failing job; logs its own RSS and the requirement (`alloc=512MiB`) |
 | `demo.sh` | Injects the OOM, then runs the pipeline |
+| `proof.sh` | Four proofs on one screen: the kernel OOM, the recovered container, NudgeBee's metered requests, the decision trail |
+| `card.py` | Renders the last run as Markdown for a Kepler war room |
 | `.env` | Gateway URL/token, model id, job limits |
 
 ## The bridge
