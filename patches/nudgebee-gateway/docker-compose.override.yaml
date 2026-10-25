@@ -1,0 +1,7 @@
+# Local-only override: wire the AI Gateway UI tab to the gateway running on the host.
+# Delete this file and `docker-compose up -d app` to revert.
+services:
+  app:
+    environment:
+      LLM_GATEWAY_URL: http://host.docker.internal:8010
+      UI_ENABLE_LLM_GATEWAY: "true"
