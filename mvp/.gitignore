@@ -1,0 +1,7 @@
+.env.local
+evidence/
+vendor/
+*.db
+__pycache__/
+*.pyc
+

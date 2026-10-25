@@ -1,0 +1,26 @@
+# Local developer profile from the official GitHub compose stack.
+# Keep every published port on loopback; the base compose file exposes them on all interfaces.
+services:
+  postgres:
+    ports: !override ["127.0.0.1:5432:5432"]
+  rabbitmq:
+    ports: !override ["127.0.0.1:5672:5672", "127.0.0.1:15672:15672"]
+  redis:
+    ports: !override ["127.0.0.1:6379:6379"]
+  qdrant:
+    ports: !override ["127.0.0.1:6333:6333", "127.0.0.1:6334:6334"]
+  temporal:
+    ports: !override ["127.0.0.1:7233:7233"]
+  api-server-services:
+    ports: !override ["127.0.0.1:8000:8000"]
+  app:
+    ports: !override ["127.0.0.1:3000:3000"]
+  relay-server:
+    ports: !override ["127.0.0.1:8004:8080"]
+  llm-server:
+    ports: !override ["127.0.0.1:8005:8000"]
+  workflow-server:
+    ports: !override ["127.0.0.1:8007:8000"]
+  k8s-collector-app:
+    ports: !override ["127.0.0.1:8002:8000"]
+
